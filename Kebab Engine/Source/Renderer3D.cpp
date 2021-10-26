@@ -163,7 +163,6 @@ bool Renderer3D::PreUpdate(float dt)
 // Draw present buffer to screen
 bool Renderer3D::Draw(float dt)
 {
-	app->editor->OnImGuiRender(dt, frameBuffer);
 
 	frameBuffer->Bind();
 
@@ -180,6 +179,7 @@ bool Renderer3D::Draw(float dt)
 
 	frameBuffer->Unbind();
 
+	app->editor->OnImGuiRender(dt, frameBuffer);
 
 	SDL_GL_SwapWindow(app->window->window);
 	return true;
